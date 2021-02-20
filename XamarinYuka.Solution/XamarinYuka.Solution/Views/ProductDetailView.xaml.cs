@@ -18,5 +18,10 @@ namespace XamarinYuka.Solution.Views
             MyProductScore.Text = productState;
             MyProductImage.Source = new UriImageSource() { Uri = new Uri(productImage) };
         }
+
+        private void ToolbarItem_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }

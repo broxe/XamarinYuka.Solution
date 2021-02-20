@@ -2,12 +2,206 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XamarinYuka.Solution.Views.ProductDetailView">
+    <!--
     <ContentPage.Content>
         <StackLayout HorizontalOptions="Center">
             <Label Text="Welcome to Burger App"/>
-            <Image x:Name="MyProductImage" HeightRequest="100" WidthRequest="100"/>
+            <Image x:Name="MyProductImage" HeightRequest="200" WidthRequest="200"/>
             <Label x:Name="MyProductName" HorizontalTextAlignment="Center"/>
             <Label x:Name="MyProductScore" Margin="20,20" FontSize="Small"/>
         </StackLayout>
-    </ContentPage.Content>
+    </ContentPage.Content>-->
+
+    <Grid VerticalOptions="FillAndExpand">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Image Source="overlay.png" Aspect="Fill" HeightRequest="300" VerticalOptions="StartAndExpand"/>
+        
+        <StackLayout Orientation="Vertical" Margin="0,20" HorizontalOptions="Center" VerticalOptions="Center">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Image x:Name="MyProductImage" WidthRequest="100" HeightRequest="100" VerticalOptions="Center"/>
+            </StackLayout>
+            <Label x:Name="MyProductName" TextColor="White" FontSize="16" HorizontalOptions="Center"/>
+            <Label x:Name="MyProductScore" TextColor="White" FontSize="12" HorizontalOptions="Center"/>
+        </StackLayout>
+        
+        <Frame Grid.Row="1" HasShadow="True" CornerRadius="10" Margin="20,-40,20,0" Padding="0" HeightRequest="120" VerticalOptions="Start">
+            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <!-- Protéines -->
+                <StackLayout Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand">
+                    <Image Source="proteins.png" HeightRequest="25" HorizontalOptions="Center"/>
+                    <StackLayout Spacing="7" HorizontalOptions="CenterAndExpand">
+                        <Label Text="50%" TextColor="Black" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center"/>
+                        <Label Text="Protéines" TextColor="#7D7D7D" FontSize="11" HorizontalOptions="Center"/>
+                    </StackLayout>
+                </StackLayout>
+                <!-- Sucre -->
+                <StackLayout Grid.Column="1" Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand">
+                    <Image Source="sucre.png" HeightRequest="25" HorizontalOptions="Center"/>
+                    <StackLayout Spacing="7" HorizontalOptions="CenterAndExpand">
+                        <Label Text="10%" TextColor="Black" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center"/>
+                        <Label Text="Sucre" TextColor="#7D7D7D" FontSize="11" HorizontalOptions="Center"/>
+                    </StackLayout>
+                </StackLayout>
+                <!-- Sel -->
+                <StackLayout Grid.Column="2" Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand">
+                    <Image Source="sel.png" HeightRequest="25" HorizontalOptions="Center"/>
+                    <StackLayout Spacing="7" HorizontalOptions="CenterAndExpand">
+                        <Label Text="11%" TextColor="Black" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center"/>
+                        <Label Text="Sel" TextColor="#7D7D7D" FontSize="11" HorizontalOptions="Center"/>
+                    </StackLayout>
+                </StackLayout>
+                <!-- Graisses -->
+                <StackLayout Grid.Column="3" Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand">
+                    <Image Source="graisse.png" HeightRequest="25" HorizontalOptions="Center"/>
+                    <StackLayout Spacing="7" HorizontalOptions="CenterAndExpand">
+                        <Label Text="24%" TextColor="Black" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center"/>
+                        <Label Text="Graisses" TextColor="#7D7D7D" FontSize="11" HorizontalOptions="Center"/>
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+        </Frame>
+
+        <ScrollView Grid.Row="2" VerticalScrollBarVisibility="Default">
+            <StackLayout Orientation="Vertical">
+                <StackLayout BackgroundColor="White" Padding="5" Margin="0,0,0,5" >
+                    <Grid HeightRequest="50" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Fibres" TextColor="#757575" FontSize="12" VerticalOptions="Center" Margin="20,0"/>
+                        <Image Grid.Column="1" Source="checkVert.png" WidthRequest="20" HeightRequest="20" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        <StackLayout Grid.Column="2" Orientation="Horizontal" Margin="20,0" HorizontalOptions="End" VerticalOptions="Center">
+                            <Label Text="22g" TextColor="Black" FontSize="30" FontAttributes="Bold" VerticalOptions="Center"/>
+                            <Label Text="/100g" TextColor="Black" FontSize="12" VerticalOptions="Center"/>
+                        </StackLayout>
+                    </Grid>
+                </StackLayout>
+                <StackLayout BackgroundColor="White" Padding="5" Margin="0,0,0,5">
+                    <Grid HeightRequest="50" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Fibres" TextColor="#757575" FontSize="12" VerticalOptions="Center" Margin="20,0"/>
+                        <Image Grid.Column="1" Source="checkVert.png" WidthRequest="20" HeightRequest="20" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        <StackLayout Grid.Column="2" Orientation="Horizontal" Margin="20,0" HorizontalOptions="End" VerticalOptions="Center">
+                            <Label Text="22g" TextColor="Black" FontSize="30" FontAttributes="Bold" VerticalOptions="Center"/>
+                            <Label Text="/100g" TextColor="Black" FontSize="12" VerticalOptions="Center"/>
+                        </StackLayout>
+                    </Grid>
+                </StackLayout>
+                <StackLayout BackgroundColor="White" Padding="5" Margin="0,0,0,5">
+                    <Grid HeightRequest="50" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Fibres" TextColor="#757575" FontSize="12" VerticalOptions="Center" Margin="20,0"/>
+                        <Image Grid.Column="1" Source="checkVert.png" WidthRequest="20" HeightRequest="20" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        <StackLayout Grid.Column="2" Orientation="Horizontal" Margin="20,0" HorizontalOptions="End" VerticalOptions="Center">
+                            <Label Text="22g" TextColor="Black" FontSize="30" FontAttributes="Bold" VerticalOptions="Center"/>
+                            <Label Text="/100g" TextColor="Black" FontSize="12" VerticalOptions="Center"/>
+                        </StackLayout>
+                    </Grid>
+                </StackLayout>
+                <StackLayout BackgroundColor="White" Padding="5" Margin="0,0,0,5">
+                    <Grid HeightRequest="50" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Fibres" TextColor="#757575" FontSize="12" VerticalOptions="Center" Margin="20,0"/>
+                        <Image Grid.Column="1" Source="checkVert.png" WidthRequest="20" HeightRequest="20" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        <StackLayout Grid.Column="2" Orientation="Horizontal" Margin="20,0" HorizontalOptions="End" VerticalOptions="Center">
+                            <Label Text="22g" TextColor="Black" FontSize="30" FontAttributes="Bold" VerticalOptions="Center"/>
+                            <Label Text="/100g" TextColor="Black" FontSize="12" VerticalOptions="Center"/>
+                        </StackLayout>
+                    </Grid>
+                </StackLayout>
+                <StackLayout BackgroundColor="White" Padding="5" Margin="0,0,0,5">
+                    <Grid HeightRequest="50" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Fibres" TextColor="#757575" FontSize="12" VerticalOptions="Center" Margin="20,0"/>
+                        <Image Grid.Column="1" Source="checkVert.png" WidthRequest="20" HeightRequest="20" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        <StackLayout Grid.Column="2" Orientation="Horizontal" Margin="20,0" HorizontalOptions="End" VerticalOptions="Center">
+                            <Label Text="22g" TextColor="Black" FontSize="30" FontAttributes="Bold" VerticalOptions="Center"/>
+                            <Label Text="/100g" TextColor="Black" FontSize="12" VerticalOptions="Center"/>
+                        </StackLayout>
+                    </Grid>
+                </StackLayout>
+                <StackLayout BackgroundColor="White" Padding="5" Margin="0,0,0,5">
+                    <Grid HeightRequest="50" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Fibres" TextColor="#757575" FontSize="12" VerticalOptions="Center" Margin="20,0"/>
+                        <Image Grid.Column="1" Source="checkVert.png" WidthRequest="20" HeightRequest="20" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        <StackLayout Grid.Column="2" Orientation="Horizontal" Margin="20,0" HorizontalOptions="End" VerticalOptions="Center">
+                            <Label Text="22g" TextColor="Black" FontSize="30" FontAttributes="Bold" VerticalOptions="Center"/>
+                            <Label Text="/100g" TextColor="Black" FontSize="12" VerticalOptions="Center"/>
+                        </StackLayout>
+                    </Grid>
+                </StackLayout>
+            </StackLayout>
+            
+        </ScrollView>
+
+        
+        
+        <!--<Frame Grid.Row="3" BackgroundColor="White" BorderColor="#F0F0F0" Padding="5" Margin="0,0,0,5" HasShadow="False">
+            <Grid HeightRequest="50" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Sucre" TextColor="#757575" FontSize="12" VerticalOptions="Center" Margin="20,0"/>
+                <Image Grid.Column="1" Source="checkVert.png" WidthRequest="20" HeightRequest="20" HorizontalOptions="Center" VerticalOptions="Center"/>
+                <StackLayout Grid.Column="2" Orientation="Horizontal" Margin="20,0" HorizontalOptions="End" VerticalOptions="Center">
+                    <Label Text="10" TextColor="Black" FontSize="30" FontAttributes="Bold" VerticalOptions="Center"/>
+                    <Label Text="g/100g" TextColor="Black" FontSize="12" VerticalOptions="Center"/>
+                </StackLayout>
+            </Grid>
+        </Frame>
+        <Frame Grid.Row="4" BackgroundColor="White" BorderColor="#F0F0F0" Padding="5" Margin="0,0,0,5" HasShadow="False">
+            <Grid HeightRequest="50" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Sucre" TextColor="#757575" FontSize="12" VerticalOptions="Center" Margin="20,0"/>
+                <Image Grid.Column="1" Source="checkVert.png" WidthRequest="20" HeightRequest="20" HorizontalOptions="Center" VerticalOptions="Center"/>
+                <StackLayout Grid.Column="2" Orientation="Horizontal" Margin="20,0" HorizontalOptions="End" VerticalOptions="Center">
+                    <Label Text="10" TextColor="Black" FontSize="30" FontAttributes="Bold" VerticalOptions="Center"/>
+                    <Label Text="g/100g" TextColor="Black" FontSize="12" VerticalOptions="Center"/>
+                </StackLayout>
+            </Grid>
+        </Frame>-->
+        
+        
+    </Grid>
+
 </ContentPage>
