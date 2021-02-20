@@ -81,10 +81,10 @@
                             <ColumnDefinition Width="Auto"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Label Text="Fibres" TextColor="#757575" FontSize="12" VerticalOptions="Center" Margin="20,0"/>
+                        <Label Text="Protéines" TextColor="#757575" FontSize="12" VerticalOptions="Center" Margin="20,0"/>
                         <Image Grid.Column="1" Source="checkVert.png" WidthRequest="20" HeightRequest="20" HorizontalOptions="Center" VerticalOptions="Center"/>
                         <StackLayout Grid.Column="2" Orientation="Horizontal" Margin="20,0" HorizontalOptions="End" VerticalOptions="Center">
-                            <Label Text="22g" TextColor="Black" FontSize="30" FontAttributes="Bold" VerticalOptions="Center"/>
+                            <Label x:Name="MyProductProteines" TextColor="Black" FontSize="30" FontAttributes="Bold" VerticalOptions="Center"/>
                             <Label Text="/100g" TextColor="Black" FontSize="12" VerticalOptions="Center"/>
                         </StackLayout>
                     </Grid>
@@ -99,7 +99,7 @@
                         <Label Text="Fibres" TextColor="#757575" FontSize="12" VerticalOptions="Center" Margin="20,0"/>
                         <Image Grid.Column="1" Source="checkVert.png" WidthRequest="20" HeightRequest="20" HorizontalOptions="Center" VerticalOptions="Center"/>
                         <StackLayout Grid.Column="2" Orientation="Horizontal" Margin="20,0" HorizontalOptions="End" VerticalOptions="Center">
-                            <Label Text="22g" TextColor="Black" FontSize="30" FontAttributes="Bold" VerticalOptions="Center"/>
+                            <Label x:Name="MyProductFibres" TextColor="Black" FontSize="30" FontAttributes="Bold" VerticalOptions="Center"/>
                             <Label Text="/100g" TextColor="Black" FontSize="12" VerticalOptions="Center"/>
                         </StackLayout>
                     </Grid>
@@ -111,10 +111,10 @@
                             <ColumnDefinition Width="Auto"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Label Text="Fibres" TextColor="#757575" FontSize="12" VerticalOptions="Center" Margin="20,0"/>
+                        <Label Text="Sucre" TextColor="#757575" FontSize="12" VerticalOptions="Center" Margin="20,0"/>
                         <Image Grid.Column="1" Source="checkVert.png" WidthRequest="20" HeightRequest="20" HorizontalOptions="Center" VerticalOptions="Center"/>
                         <StackLayout Grid.Column="2" Orientation="Horizontal" Margin="20,0" HorizontalOptions="End" VerticalOptions="Center">
-                            <Label Text="22g" TextColor="Black" FontSize="30" FontAttributes="Bold" VerticalOptions="Center"/>
+                            <Label x:Name="MyProductSucre" TextColor="Black" FontSize="30" FontAttributes="Bold" VerticalOptions="Center"/>
                             <Label Text="/100g" TextColor="Black" FontSize="12" VerticalOptions="Center"/>
                         </StackLayout>
                     </Grid>
@@ -126,10 +126,10 @@
                             <ColumnDefinition Width="Auto"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Label Text="Fibres" TextColor="#757575" FontSize="12" VerticalOptions="Center" Margin="20,0"/>
+                        <Label Text="Graisses" TextColor="#757575" FontSize="12" VerticalOptions="Center" Margin="20,0"/>
                         <Image Grid.Column="1" Source="checkVert.png" WidthRequest="20" HeightRequest="20" HorizontalOptions="Center" VerticalOptions="Center"/>
                         <StackLayout Grid.Column="2" Orientation="Horizontal" Margin="20,0" HorizontalOptions="End" VerticalOptions="Center">
-                            <Label Text="22g" TextColor="Black" FontSize="30" FontAttributes="Bold" VerticalOptions="Center"/>
+                            <Label x:Name="MyProductGraisses" TextColor="Black" FontSize="30" FontAttributes="Bold" VerticalOptions="Center"/>
                             <Label Text="/100g" TextColor="Black" FontSize="12" VerticalOptions="Center"/>
                         </StackLayout>
                     </Grid>
@@ -141,10 +141,10 @@
                             <ColumnDefinition Width="Auto"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Label Text="Fibres" TextColor="#757575" FontSize="12" VerticalOptions="Center" Margin="20,0"/>
+                        <Label Text="Sel" TextColor="#757575" FontSize="12" VerticalOptions="Center" Margin="20,0"/>
                         <Image Grid.Column="1" Source="checkVert.png" WidthRequest="20" HeightRequest="20" HorizontalOptions="Center" VerticalOptions="Center"/>
                         <StackLayout Grid.Column="2" Orientation="Horizontal" Margin="20,0" HorizontalOptions="End" VerticalOptions="Center">
-                            <Label Text="22g" TextColor="Black" FontSize="30" FontAttributes="Bold" VerticalOptions="Center"/>
+                            <Label x:Name="MyProductSel" TextColor="Black" FontSize="30" FontAttributes="Bold" VerticalOptions="Center"/>
                             <Label Text="/100g" TextColor="Black" FontSize="12" VerticalOptions="Center"/>
                         </StackLayout>
                     </Grid>
@@ -156,11 +156,11 @@
                             <ColumnDefinition Width="Auto"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Label Text="Fibres" TextColor="#757575" FontSize="12" VerticalOptions="Center" Margin="20,0"/>
+                        <Label Text="Calories" TextColor="#757575" FontSize="12" VerticalOptions="Center" Margin="20,0"/>
                         <Image Grid.Column="1" Source="checkVert.png" WidthRequest="20" HeightRequest="20" HorizontalOptions="Center" VerticalOptions="Center"/>
                         <StackLayout Grid.Column="2" Orientation="Horizontal" Margin="20,0" HorizontalOptions="End" VerticalOptions="Center">
-                            <Label Text="22g" TextColor="Black" FontSize="30" FontAttributes="Bold" VerticalOptions="Center"/>
-                            <Label Text="/100g" TextColor="Black" FontSize="12" VerticalOptions="Center"/>
+                            <Label x:Name="MyProductCalories" TextColor="Black" FontSize="30" FontAttributes="Bold" VerticalOptions="Center"/>
+                            <Label Text="/kcal" TextColor="Black" FontSize="12" VerticalOptions="Center"/>
                         </StackLayout>
                     </Grid>
                 </StackLayout>
@@ -168,38 +168,6 @@
             
         </ScrollView>
 
-        
-        
-        <!--<Frame Grid.Row="3" BackgroundColor="White" BorderColor="#F0F0F0" Padding="5" Margin="0,0,0,5" HasShadow="False">
-            <Grid HeightRequest="50" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Label Text="Sucre" TextColor="#757575" FontSize="12" VerticalOptions="Center" Margin="20,0"/>
-                <Image Grid.Column="1" Source="checkVert.png" WidthRequest="20" HeightRequest="20" HorizontalOptions="Center" VerticalOptions="Center"/>
-                <StackLayout Grid.Column="2" Orientation="Horizontal" Margin="20,0" HorizontalOptions="End" VerticalOptions="Center">
-                    <Label Text="10" TextColor="Black" FontSize="30" FontAttributes="Bold" VerticalOptions="Center"/>
-                    <Label Text="g/100g" TextColor="Black" FontSize="12" VerticalOptions="Center"/>
-                </StackLayout>
-            </Grid>
-        </Frame>
-        <Frame Grid.Row="4" BackgroundColor="White" BorderColor="#F0F0F0" Padding="5" Margin="0,0,0,5" HasShadow="False">
-            <Grid HeightRequest="50" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Label Text="Sucre" TextColor="#757575" FontSize="12" VerticalOptions="Center" Margin="20,0"/>
-                <Image Grid.Column="1" Source="checkVert.png" WidthRequest="20" HeightRequest="20" HorizontalOptions="Center" VerticalOptions="Center"/>
-                <StackLayout Grid.Column="2" Orientation="Horizontal" Margin="20,0" HorizontalOptions="End" VerticalOptions="Center">
-                    <Label Text="10" TextColor="Black" FontSize="30" FontAttributes="Bold" VerticalOptions="Center"/>
-                    <Label Text="g/100g" TextColor="Black" FontSize="12" VerticalOptions="Center"/>
-                </StackLayout>
-            </Grid>
-        </Frame>-->
         
         
     </Grid>

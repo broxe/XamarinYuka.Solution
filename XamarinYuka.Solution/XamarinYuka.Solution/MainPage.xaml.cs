@@ -26,8 +26,8 @@ namespace XamarinYuka.Solution
             var productDetail = e.Item as ProductModel;
             await Navigation.PushModalAsync(new ProductDetailView(productDetail.ProductName, productDetail.ProductScore, productDetail.ProductState, productDetail.ProductImage));
         }
-        /*
-        private async void BouttonScanDefault_Clicked(object sender, EventArgs e)
+
+        private async void ToolbarItem_Clicked(object sender, EventArgs e)
         {
             scanPage = new ZXingScannerPage();
             scanPage.OnScanResult += (result) =>
@@ -43,6 +43,6 @@ namespace XamarinYuka.Solution
             };
 
             await Navigation.PushModalAsync(scanPage);
-        }*/
+        }
     }
 }
