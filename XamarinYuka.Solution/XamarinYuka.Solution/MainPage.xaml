@@ -5,7 +5,9 @@
              xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Order="Primary" Icon="plus.png" Text="Scanner" Priority="0" Clicked="ToolbarItem_Clicked"/>
+        <ToolbarItem Order="Primary" Icon="plus.png" Text="Scanner" Priority="0" Clicked="ToolbarItemClicked_Ajouter"/>
+        <ToolbarItem Order="Primary" Icon="info.png" Text="Scanner" Priority="0" Clicked="ToolbarItemClicked_Information"/>
+        <ToolbarItem Order="Primary" Icon="codeBarre.png" Text="Scanner" Priority="0" Clicked="ToolbarItemClicked_ScannerCode"/>
     </ContentPage.ToolbarItems>
     
     <StackLayout>
