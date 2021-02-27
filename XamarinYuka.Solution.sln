@@ -5,7 +5,14 @@ VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinYuka.Solution.Android", "XamarinYuka.Solution\XamarinYuka.Solution.Android\XamarinYuka.Solution.Android.csproj", "{2D3F2F11-73C2-4BAB-88D9-285410402F57}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinYuka.Solution", "XamarinYuka.Solution\XamarinYuka.Solution\XamarinYuka.Solution.csproj", "{E6D85492-B24D-4D25-ADD9-8F74B5CBC357}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XamarinYuka.Solution", "XamarinYuka.Solution\XamarinYuka.Solution\XamarinYuka.Solution.csproj", "{E6D85492-B24D-4D25-ADD9-8F74B5CBC357}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{0E46444D-F124-492F-8A18-815E43190637}"
+	ProjectSection(SolutionItems) = preProject
+		XamarinYuka.Solution\Web\contact.js = XamarinYuka.Solution\Web\contact.js
+		XamarinYuka.Solution\Web\index.php = XamarinYuka.Solution\Web\index.php
+		XamarinYuka.Solution\Web\styleGlobal.css = XamarinYuka.Solution\Web\styleGlobal.css
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -8,14 +8,14 @@ namespace XamarinYuka.Solution.Models
     {
         public string ProductCode { get; set; }
         public string ProductName { get; set; }
-        public int ProductScore { get; set; }
+        public string ProductScore { get; set; }
         public string ProductState { get; set; }
         public string ProductImage { get; set; }
-        public double ProductProteine { get; set; }
-        public double ProductFibre { get; set; }
-        public double ProductSucre { get; set; }
-        public double ProductGraisses { get; set; }
-        public double ProductSel { get; set; }
-        public double ProductCalories { get; set; }
+        public string ProductProteine { get; set; }
+        public string ProductFibre { get; set; }
+        public string ProductSucre { get; set; }
+        public string ProductGraisses { get; set; }
+        public string ProductSel { get; set; }
+        public string ProductCalories { get; set; }
     }
 }
