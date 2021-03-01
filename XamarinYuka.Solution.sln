@@ -9,6 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XamarinYuka.Solution", "Xam
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{0E46444D-F124-492F-8A18-815E43190637}"
 	ProjectSection(SolutionItems) = preProject
+		XamarinYuka.Solution\Web\api-yoka.php = XamarinYuka.Solution\Web\api-yoka.php
 		XamarinYuka.Solution\Web\contact.js = XamarinYuka.Solution\Web\contact.js
 		XamarinYuka.Solution\Web\index.php = XamarinYuka.Solution\Web\index.php
 		XamarinYuka.Solution\Web\styleGlobal.css = XamarinYuka.Solution\Web\styleGlobal.css

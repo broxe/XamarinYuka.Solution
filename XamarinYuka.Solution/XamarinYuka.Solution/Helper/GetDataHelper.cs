@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using XamarinYuka.Solution.Models;
+using XamarinYuka.Solution.Constants;
 
 namespace XamarinYuka.Solution.Helper
 {
@@ -18,7 +19,7 @@ namespace XamarinYuka.Solution.Helper
         public async Task<ProductModel> GetProductInfoByCodeAsync(string productCode)
         {
             ProductModel resultProduct = new ProductModel();
-            var uri = new Uri("https://droid.buzzely.fr/yoka.php/?codeId=" + productCode);
+            var uri = new Uri(DataConstant.constUrlData + "?productFunction=get_info_product_by_id&codeId="+ productCode);
             HttpClient myClient = new HttpClient();
 
             var response = await myClient.GetAsync(uri);
@@ -40,7 +41,7 @@ namespace XamarinYuka.Solution.Helper
             bool resultExist = false;
 
             ProductModel resultProduct = new ProductModel();
-            var uri = new Uri("https://droid.buzzely.fr/yoka.php/?codeId=" + productCode);
+            var uri = new Uri(DataConstant.constUrlData+ "?productFunction=get_info_product_by_id&codeId=" + productCode);
             HttpClient myClient = new HttpClient();
 
             var response = await myClient.GetAsync(uri);
