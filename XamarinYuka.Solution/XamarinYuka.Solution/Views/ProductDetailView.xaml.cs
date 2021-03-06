@@ -11,6 +11,7 @@ using Xamarin.Forms.Xaml;
 using XamarinYuka.Solution.Helper;
 using XamarinYuka.Solution.Models;
 using XamarinYuka.Solution.ViewModel;
+using XamarinYuka.Solution.Mapping;
 
 namespace XamarinYuka.Solution.Views
 {
@@ -130,9 +131,15 @@ namespace XamarinYuka.Solution.Views
         /// <param name="productCode"></param>
         private async void AddProductToLocalBase(string productCode)
         {
-            GetDataHelper helper = new GetDataHelper();
-            ProductModel product = await helper.GetProductInfoByCodeAsync(productCode);
-            await ProductViewModel.Database.SaveItemAsync(product);
+            var isProductExist = await ProductViewModel.Database.GetItemAsync(productCode);
+            if(!string.IsNullOrEmpty(isProductExist.ProductCode))
+            {
+                GetDataHelper helper = new GetDataHelper();
+                ProductModel product = await helper.GetProductInfoByCodeAsync(productCode);
+                List<ProductModel> listProduct = new List<ProductModel>() { product };
+                await ProductViewModel.Database.SaveItemAsync(ProductMapping.MappingProductModelToProductEntityModel(listProduct).First(), false);
+            }
+            
         }
     }
 }

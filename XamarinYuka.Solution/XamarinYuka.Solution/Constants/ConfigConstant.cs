@@ -8,7 +8,7 @@ namespace XamarinYuka.Solution.Constants
     public class ConfigConstant
     {
 
-        public const string DatabaseFilename = "TodoSQLite.db3";
+        public const string DatabaseFilename = "ProductSQLite.db3";
 
         public const SQLite.SQLiteOpenFlags Flags =
             // open the database in read/write mode

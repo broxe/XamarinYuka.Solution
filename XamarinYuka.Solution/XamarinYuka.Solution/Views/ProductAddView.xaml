@@ -5,12 +5,49 @@
     
     <StackLayout>
         <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-            <Label Text="MediaPicker Sample!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36" />
+            <Label Text="NOUVEAU" HorizontalTextAlignment="Center" TextColor="White" FontSize="36" />
         </Frame>
 
-        <Button Text="Pick Image" Clicked="ButtonClicked_PhotoRepertoire" />
-        <Button Text="Take Image" Clicked="ButtonClicked_PhotoCamera" />
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <Button Text="Récupérer Image" Clicked="ButtonClicked_PhotoRepertoire" />
+            <Button Text="Prendre Photo" Clicked="ButtonClicked_PhotoCamera" />
+        </StackLayout>
+        
         <Image x:Name="PhotoProduit" />
+
+        <ScrollView Orientation="Vertical" BindingContext="{Binding ProductModelItems}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Label Text="Login" FontAttributes="Bold" TextColor="CornflowerBlue" HorizontalOptions="CenterAndExpand" FontSize="25" VerticalOptions="Center" Margin="0,20,0,0" Grid.Row="0" x:Name="welcomeText"/>
+
+                <Entry x:Name="Code" Placeholder="Code" Text="{Binding ProductCode, Mode=TwoWay}" Grid.Row="1" Margin="20,0" ReturnType="Done" Keyboard="Default"/>
+                <Entry x:Name="Name" Placeholder="Name" Text="{Binding ProductName, Mode=TwoWay}" Grid.Row="2" Margin="20,0" HeightRequest="50" ReturnType="Done"/>
+                <Entry x:Name="Score" Placeholder="Score" Text="{Binding ProductScore, Mode=TwoWay}" Grid.Row="3" Margin="20,0" ReturnType="Done" Keyboard="Numeric"/>
+                <Entry x:Name="Statut" Placeholder="Statut" Text="{Binding ProductState, Mode=TwoWay}" Grid.Row="4" Margin="20,0" ReturnType="Done" Keyboard="Default"/>
+                <Entry x:Name="Champ1" Placeholder="Champ1" Text="{Binding ProductChamp1, Mode=TwoWay}" Grid.Row="5" Margin="20,0" ReturnType="Done" Keyboard="Default"/>
+                <Entry x:Name="Champ2" Placeholder="Champ2" Text="{Binding ProductChamp2, Mode=TwoWay}" Grid.Row="6" Margin="20,0" ReturnType="Done" Keyboard="Default"/>
+                <Entry x:Name="Champ3" Placeholder="Champ3" Text="{Binding ProductChamp3, Mode=TwoWay}" Grid.Row="7" Margin="20,0" ReturnType="Done" Keyboard="Default"/>
+                <Entry x:Name="Champ4" Placeholder="Champ4" Text="{Binding ProductChamp4, Mode=TwoWay}" Grid.Row="8" Margin="20,0" ReturnType="Done" Keyboard="Default"/>
+                <Entry x:Name="Champ5" Placeholder="Champ5" Text="{Binding ProductChamp5, Mode=TwoWay}" Grid.Row="9" Margin="20,0" ReturnType="Done" Keyboard="Default"/>
+                <Entry x:Name="Champ6" Placeholder="Champ6" Text="{Binding ProductChamp6, Mode=TwoWay}" Grid.Row="10" Margin="20,0" ReturnType="Done" Keyboard="Default"/>
+
+                <Button Text="Valider" Clicked="ButtonClicked_Valider" VerticalOptions="EndAndExpand" BackgroundColor="CornflowerBlue" HeightRequest="60" TextColor="White" CornerRadius="0" Grid.Row="11"/>
+
+            </Grid>
+        </ScrollView>
+        
     </StackLayout>
     
 </ContentPage>

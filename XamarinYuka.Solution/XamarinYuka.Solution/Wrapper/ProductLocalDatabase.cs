@@ -29,31 +29,31 @@ namespace XamarinYuka.Solution.Wrapper
         {
             if (!initialized)
             {
-                if (!Database.TableMappings.Any(m => m.MappedType.Name == typeof(ProductModel).Name))
+                if (!Database.TableMappings.Any(m => m.MappedType.Name == typeof(ProductEntityModel).Name))
                 {
-                    await Database.CreateTablesAsync(CreateFlags.None, typeof(ProductModel)).ConfigureAwait(false);
+                    await Database.CreateTablesAsync(CreateFlags.None, typeof(ProductEntityModel)).ConfigureAwait(false);
                 }
                 initialized = true;
             }
         }
 
-        public Task<List<ProductModel>> GetItemsAsync()
+        public Task<List<ProductEntityModel>> GetItemsAsync()
         {
-            return Database.Table<ProductModel>().ToListAsync();
+            return Database.Table<ProductEntityModel>().ToListAsync();
         }
 
-        public Task<List<ProductModel>> GetItemsNotDoneAsync()
+        public Task<List<ProductEntityModel>> GetItemsNotDoneAsync()
         {
             // SQL queries are also possible
-            return Database.QueryAsync<ProductModel>("SELECT * FROM [TodoItem] WHERE [Done] = 0");
+            return Database.QueryAsync<ProductEntityModel>("SELECT * FROM [TodoItem] WHERE [Done] = 0");
         }
 
-        public Task<ProductModel> GetItemAsync(string productCode)
+        public Task<ProductEntityModel> GetItemAsync(string productCode)
         {
-            return Database.Table<ProductModel>().Where(i => i.ProductCode == productCode).FirstOrDefaultAsync();
+            return Database.Table<ProductEntityModel>().Where(i => i.ProductCode == productCode).FirstOrDefaultAsync();
         }
 
-        public Task<int> SaveItemAsync(ProductModel item, bool isUpdate = false)
+        public Task<int> SaveItemAsync(ProductEntityModel item, bool isUpdate = false)
         {
             if (isUpdate)
             {
@@ -65,7 +65,7 @@ namespace XamarinYuka.Solution.Wrapper
             }
         }
 
-        public Task<int> DeleteItemAsync(ProductModel item)
+        public Task<int> DeleteItemAsync(ProductEntityModel item)
         {
             return Database.DeleteAsync(item);
         }

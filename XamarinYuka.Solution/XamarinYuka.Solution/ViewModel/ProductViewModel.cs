@@ -2,16 +2,32 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
+using System.Threading.Tasks;
 using XamarinYuka.Solution.Models;
 using XamarinYuka.Solution.Wrapper;
+using XamarinYuka.Solution.Mapping;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace XamarinYuka.Solution.ViewModel
 {
-    public class ProductViewModel
+    public class ProductViewModel : INotifyPropertyChanged
     {
-        public ObservableCollection<ProductModel> ListProduct { get; set; }
+        public event PropertyChangedEventHandler PropertyChanged;
         static ProductLocalDatabase database;
-
+        private ObservableCollection<ProductModel> _listProduct { get; set; }
+        public ObservableCollection<ProductModel> ListProduct 
+        {
+            get
+            {
+                return _listProduct;
+            }
+            set
+            {
+                _listProduct = value;
+                NotifyPropertyChanged();
+            }
+        }
         public static ProductLocalDatabase Database
         {
             get
@@ -27,16 +43,26 @@ namespace XamarinYuka.Solution.ViewModel
         public ProductViewModel()
         {
             ListProduct = new ObservableCollection<ProductModel>();
-            /*ListProduct.Add(new ProductModel { ProductCode = "6221031497919", ProductName = "BIO Spaghetti", ProductScore = "10", ProductImage = "https://www.smartfooding.com/fr/14492-large_default/spaghetti-ble-et-quinoa-ail-persil-bio-500-gr.jpg", ProductState = "Bon"});
-            ListProduct.Add(new ProductModel { ProductCode = "3660942051767", ProductName = "BIO Spaghetti", ProductScore = "10", ProductImage = "https://www.smartfooding.com/fr/14492-large_default/spaghetti-ble-et-quinoa-ail-persil-bio-500-gr.jpg", ProductState = "Bon" });
-            */
-            GetAllProductLocalBase();
+            
+            Task.Run(async () => {
+                ListProduct = new ObservableCollection<ProductModel>(ProductMapping.MappingProductEntityModelToProductModel(await Database.GetItemsAsync()));
+            });
         }
 
-        private async void GetAllProductLocalBase()
+        public async void RefreshAllProduct()
         {
-            ListProduct = new ObservableCollection<ProductModel>(await Database.GetItemsAsync());
+            ListProduct = new ObservableCollection<ProductModel>(ProductMapping.MappingProductEntityModelToProductModel(await Database.GetItemsAsync()));
         }
 
+        // This method is called by the Set accessor of each property.
+        // The CallerMemberName attribute that is applied to the optional propertyName
+        // parameter causes the property name of the caller to be substituted as an argument.
+        private void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
     }
 }

@@ -17,14 +17,18 @@ namespace XamarinYuka.Solution
     {
         private ZXingScannerPage _scanPage;
         private GetDataHelper _dataHelper;
+        private ProductViewModel _productViewModel;
 
         public MainPage()
         {
             InitializeComponent();
-            BindingContext = new ProductViewModel();
+            _productViewModel = new ProductViewModel();
+            BindingContext = _productViewModel;
             _dataHelper = new GetDataHelper();
         }
 
+
+        #region evenement graphique
         //
         //  Ouverture fenetre de detail
         private async void OnItemSelected(Object sender, ItemTappedEventArgs e)
@@ -33,8 +37,6 @@ namespace XamarinYuka.Solution
             await Navigation.PushModalAsync(new ProductDetailView(productDetail.ProductCode));
         }
 
-        //
-        //  Scanner un produit
         private async void ToolbarItemClicked_ScannerCode(object sender, EventArgs e)
         {
             _scanPage = new ZXingScannerPage();
@@ -76,5 +78,11 @@ namespace XamarinYuka.Solution
         {
             await Navigation.PushModalAsync(new ProductAddView());
         }
+
+        private async void ToolbarItemClicked_Refresh(object sender, EventArgs e)
+        {
+            _productViewModel.RefreshAllProduct();
+        }
+        #endregion
     }
 }

@@ -6,14 +6,34 @@ using System.Threading.Tasks;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XamarinYuka.Solution.Models;
+using XamarinYuka.Solution.ViewModel;
+using XamarinYuka.Solution.Wrapper;
 
 namespace XamarinYuka.Solution.Views
 {
     public partial class ProductAddView : ContentPage
     {
+        private ProductAddViewModel ProductAddViewModelItems { get; set; }
+        static ProductLocalDatabase database;
+        public static ProductLocalDatabase Database
+        {
+            get
+            {
+                if (database == null)
+                {
+                    database = new ProductLocalDatabase();
+                }
+                return database;
+            }
+        }
+
+
         public ProductAddView()
         {
             InitializeComponent();
+            ProductAddViewModelItems = new ProductAddViewModel();
+            BindingContext = ProductAddViewModelItems;
         }
 
         async void ButtonClicked_PhotoRepertoire(System.Object sender, System.EventArgs e)
@@ -43,5 +63,9 @@ namespace XamarinYuka.Solution.Views
             }
         }
 
+        private void ButtonClicked_Valider(object sender, EventArgs e)
+        {
+            ProductModel productAdded = ProductAddViewModelItems.ProductModelItems;
+        }
     }
 }
