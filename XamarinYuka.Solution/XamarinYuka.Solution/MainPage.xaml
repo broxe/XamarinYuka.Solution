@@ -27,12 +27,14 @@
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
 
-                            <controls:CircleImage HeightRequest="60" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Aspect="AspectFill" WidthRequest="66" Grid.RowSpan="2" Source="{Binding ProductImage}"/>
-                            <Label Grid.Column="1" Text="{Binding ProductName}" VerticalOptions="End"/>
-                            <Label Grid.Column="1" Grid.Row="1" VerticalOptions="Start" Text="{Binding ProductState}"/>
+                            <ImageButton Grid.RowSpan="2" WidthRequest="40" Source="trash.png" Margin="5,5,5,5" BorderColor="Transparent" BackgroundColor="Transparent" Clicked="ImageButtonClicked_Delete" BindingContext="{Binding ProductCode}"/>
+                            <controls:CircleImage Grid.RowSpan="2" Grid.Column="1" Source="{Binding ProductImage}" HeightRequest="60" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Aspect="AspectFill" WidthRequest="66"/>
+                            <Label Grid.Column="2" Text="{Binding ProductName}" VerticalOptions="End"/>
+                            <Label Grid.Column="2" Grid.Row="1" VerticalOptions="Start" Text="{Binding ProductState}"/>
                         </Grid>
                     </ViewCell>
                 </DataTemplate>

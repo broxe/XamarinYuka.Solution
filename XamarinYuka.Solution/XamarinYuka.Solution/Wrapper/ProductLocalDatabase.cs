@@ -70,5 +70,10 @@ namespace XamarinYuka.Solution.Wrapper
             return Database.DeleteAsync(item);
         }
 
+        public Task<int> DeleteItemByCode(string codeItem)
+        {
+            return Database.ExecuteAsync($"DELETE FROM ProductEntityModel WHERE ProductCode = {codeItem}");
+        }
+
     }
 }

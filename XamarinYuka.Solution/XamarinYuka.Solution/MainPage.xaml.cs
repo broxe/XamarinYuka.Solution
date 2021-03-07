@@ -83,6 +83,15 @@ namespace XamarinYuka.Solution
         {
             _productViewModel.RefreshAllProduct();
         }
+
+        private void ImageButtonClicked_Delete(object sender, EventArgs e)
+        {
+            var productCodeDelete = ((ImageButton)sender).BindingContext as string;
+            _productViewModel.DeleteProductByCode(productCodeDelete);
+            _productViewModel.RefreshAllProduct();
+        }
         #endregion
+
+
     }
 }
