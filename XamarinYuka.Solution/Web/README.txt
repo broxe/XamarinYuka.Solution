@@ -1,0 +1,1 @@
+upload.php : charge l'image, faut créer un repertoire de sauvegarde voir le code source
