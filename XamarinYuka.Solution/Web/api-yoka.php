@@ -87,6 +87,7 @@
         {
 	        $requestSql = "SELECT * FROM tb_ProductInformation";
             $resultSql = mysqli_query($connexion, $requestSql);
+            $myProductArray = [];
 
             if (mysqli_num_rows($resultSql) > 0) 
             {
@@ -104,7 +105,8 @@
     	            $myProduct->ProductChamp4 = $row["pr_champ4"];
     	            $myProduct->ProductChamp5 = $row["pr_champ5"];
     	            $myProduct->ProductChamp6 = $row["pr_champ6"];
-                    array_push($myProductArray,$myProduct);
+                    //array_push($myProductArray,$myProduct);
+                    $myProductArray[] = $row;
                 }
             } 
             
