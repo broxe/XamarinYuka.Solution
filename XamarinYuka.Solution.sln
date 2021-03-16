@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{0E46444D-F12
 		XamarinYuka.Solution\Web\api-yoka.php = XamarinYuka.Solution\Web\api-yoka.php
 		XamarinYuka.Solution\Web\contact.js = XamarinYuka.Solution\Web\contact.js
 		XamarinYuka.Solution\Web\index.php = XamarinYuka.Solution\Web\index.php
+		XamarinYuka.Solution\Web\insertLog.php = XamarinYuka.Solution\Web\insertLog.php
+		XamarinYuka.Solution\Web\postProduct.php = XamarinYuka.Solution\Web\postProduct.php
 		XamarinYuka.Solution\Web\styleGlobal.css = XamarinYuka.Solution\Web\styleGlobal.css
 		XamarinYuka.Solution\Web\upload.php = XamarinYuka.Solution\Web\upload.php
 	EndProjectSection

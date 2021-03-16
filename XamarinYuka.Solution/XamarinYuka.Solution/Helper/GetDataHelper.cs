@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using XamarinYuka.Solution.Models;
 using XamarinYuka.Solution.Constants;
+using System.Net;
+using System.Collections.Specialized;
 
 namespace XamarinYuka.Solution.Helper
 {
@@ -59,6 +61,50 @@ namespace XamarinYuka.Solution.Helper
             }
 
             return resultExist;
+        }
+
+        public void InsertLog(string logText)
+        {
+            string URL = DataConstant.constUrlLog;
+            WebClient webClient = new WebClient();
+
+            NameValueCollection formData = new NameValueCollection();
+            formData["logText"] = logText;
+
+            byte[] responseBytes = webClient.UploadValues(URL, "POST", formData);
+            string responsefromserver = Encoding.UTF8.GetString(responseBytes);
+            Console.WriteLine(responsefromserver);
+            webClient.Dispose();
+        }
+
+        public void InsertProduct ()
+        {
+            string URL = DataConstant.constUrlPostProduct;
+            WebClient webClient = new WebClient();
+
+            NameValueCollection formData = new NameValueCollection();
+            formData["send"] = "testuser";
+            formData["code"] = "testuser";
+            formData["name"] = "mypassword";
+            formData["score"] = "testuser";
+            formData["state"] = "mypassword";
+            formData["champ10"] = "testuser";
+            formData["champ20"] = "mypassword";
+            formData["champ30"] = "testuser";
+            formData["champ40"] = "mypassword";
+            formData["champ50"] = "testuser";
+            formData["champ60"] = "mypassword";
+            formData["champ11"] = "testuser";
+            formData["champ21"] = "mypassword";
+            formData["champ31"] = "testuser";
+            formData["champ41"] = "mypassword";
+            formData["champ51"] = "testuser";
+            formData["champ61"] = "mypassword";
+
+            byte[] responseBytes = webClient.UploadValues(URL, "POST", formData);
+            string responsefromserver = Encoding.UTF8.GetString(responseBytes);
+            Console.WriteLine(responsefromserver);
+            webClient.Dispose();
         }
     }
 }
